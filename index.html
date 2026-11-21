@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign in | Kestrel Bank NetBanking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="login">
+  <div class="login-wrap">
+    <a class="brand login-brand" href="index.html">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#b8893b"/><path d="M8 24c5-1 8-4 10-9l3 5 4-7 7 11c-4-2-8-2-12 0-4-2-8-2-12 0Z" fill="#0f3d3a"/></svg>
+      Kestrel Bank
+    </a>
+
+    <div class="panel">
+
+      <!-- Step 1: email or account number -->
+      <form id="step1" novalidate>
+        <h2>Sign in to NetBanking</h2>
+        <p class="sub">Enter your registered email or account number. We'll send you a one-time password.</p>
+        <label for="ident">Email or account number</label>
+        <input class="field" id="ident" type="text" autocomplete="off" placeholder="Email or account number" required autofocus>
+        <button class="btn" id="sendBtn" type="submit">Send OTP</button>
+        <div class="msg" id="msg1" role="status" aria-live="polite"></div>
+      </form>
+
+      <!-- Step 2: OTP -->
+      <form id="step2" class="hidden" novalidate>
+        <h2>Enter your OTP</h2>
+        <div class="sent-note" role="status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l3 3 5-6"/></svg>
+          <span id="sentNote">OTP sent successfully.</span>
+        </div>
+        <div class="otp-boxes" id="otpBoxes" role="group" aria-label="One-time password">
+          <input inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Digit 1">
+          <input inputmode="numeric" maxlength="1" aria-label="Digit 2">
+          <input inputmode="numeric" maxlength="1" aria-label="Digit 3">
+          <input inputmode="numeric" maxlength="1" aria-label="Digit 4">
+          <input inputmode="numeric" maxlength="1" aria-label="Digit 5">
+          <input inputmode="numeric" maxlength="1" aria-label="Digit 6">
+        </div>
+        <button class="btn" id="verifyBtn" type="submit">Verify and sign in</button>
+        <div class="row">
+          <button type="button" class="link-btn" id="changeBtn">Go back</button>
+          <button type="button" class="link-btn" id="resendBtn" disabled>Resend OTP</button>
+        </div>
+        <div class="msg" id="msg2" role="status" aria-live="polite"></div>
+      </form>
+
+      <!-- Step 3: processing -->
+      <div id="processing" class="state hidden" role="status" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <h2 id="procTitle">Verifying OTP</h2>
+        <p>Please don't refresh or press the back button.</p>
+      </div>
+
+      <!-- Step 4: success -->
+      <div id="success" class="state hidden" role="status" aria-live="polite">
+        <div class="badge">
+          <span class="sb-ring"></span>
+          <svg viewBox="0 0 96 96" aria-hidden="true">
+            <circle class="sb-fill" cx="48" cy="48" r="44"/>
+            <circle class="sb-circle" cx="48" cy="48" r="46"/>
+            <path class="sb-tick" d="M28 50 L42 64 L69 34"/>
+          </svg>
+        </div>
+        <h2 class="rise">Login successful</h2>
+        <p class="rise d2">Welcome back, Aarav</p>
+        <div class="progress" aria-hidden="true"><i></i></div>
+        <p class="rise d2" style="margin-top:12px;font-size:13px">Taking you to your dashboard…</p>
+      </div>
+    </div>
+
+    <p class="login-foot">Kestrel Bank is a fictional bank created as a film prop. Never share your OTP with anyone.</p>
+  </div>
+</div>
+
+<!-- Loading skeleton shown after the success animation (stays until the page is reloaded) -->
+<div id="skeleton" class="hidden" aria-busy="true" aria-label="Loading your dashboard">
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="index.html" tabindex="-1">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#b8893b"/><path d="M8 24c5-1 8-4 10-9l3 5 4-7 7 11c-4-2-8-2-12 0-4-2-8-2-12 0Z" fill="#0f3d3a"/></svg>
+        Kestrel Bank
+      </a>
+      <div class="sk-dark sk-nav"></div><div class="sk-dark sk-nav"></div><div class="sk-dark sk-nav"></div>
+      <div class="sk-dark sk-nav"></div><div class="sk-dark sk-nav"></div><div class="sk-dark sk-nav"></div><div class="sk-dark sk-nav"></div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <div class="sk" style="height:40px;width:min(380px,50%)"></div>
+        <div class="user"><div class="sk sk-line" style="width:130px;margin:0"></div><div class="sk sk-circle" style="width:38px;height:38px"></div></div>
+      </header>
+      <main class="content">
+        <div class="sk-status"><div class="spinner" aria-hidden="true"></div>Loading your accounts…</div>
+        <div class="sk" style="height:26px;width:260px;margin-bottom:10px"></div>
+        <div class="sk" style="height:14px;width:340px;margin-bottom:26px"></div>
+        <section class="grid hero">
+          <div class="card"><div class="sk sk-line" style="width:40%"></div><div class="sk" style="height:42px;width:60%;margin:14px 0 22px"></div><div class="sk sk-line" style="width:75%"></div></div>
+          <div class="card"><div class="sk sk-line" style="width:35%;margin-bottom:16px"></div><div class="actions"><div class="sk" style="height:70px"></div><div class="sk" style="height:70px"></div><div class="sk" style="height:70px"></div><div class="sk" style="height:70px"></div></div></div>
+        </section>
+        <section class="grid cols">
+          <div class="card sk-card"><div class="sk sk-line" style="width:50%"></div><div class="sk sk-line" style="width:35%"></div><div class="sk" style="height:26px;width:55%;margin-top:34px"></div></div>
+          <div class="card sk-card"><div class="sk sk-line" style="width:50%"></div><div class="sk sk-line" style="width:35%"></div><div class="sk" style="height:26px;width:55%;margin-top:34px"></div></div>
+          <div class="card sk-card"><div class="sk sk-line" style="width:50%"></div><div class="sk sk-line" style="width:35%"></div><div class="sk" style="height:26px;width:55%;margin-top:34px"></div></div>
+        </section>
+        <section class="grid lower">
+          <div class="card">
+            <div class="sk sk-line" style="width:30%;margin-bottom:18px"></div>
+            <div class="sk-row"><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div></div>
+            <div class="sk-row"><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div></div>
+            <div class="sk-row"><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div></div>
+            <div class="sk-row"><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div></div>
+            <div class="sk-row"><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div><div class="sk sk-line" style="margin:0"></div></div>
+          </div>
+          <div class="stack">
+            <div class="card"><div class="sk" style="height:150px"></div></div>
+            <div class="sk" style="height:170px;border-radius:12px"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const show = (id) => ['step1','step2','processing','success'].forEach(x => $(x).classList.toggle('hidden', x !== id));
+const boxes = [...document.querySelectorAll('#otpBoxes input')];
+const silent = /[?&]silent/.test(location.search);
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let timer = null, audio = null;
+
+function startCooldown(sec) {
+  const b = $('resendBtn'); clearInterval(timer); b.disabled = true;
+  const tick = () => { b.textContent = sec > 0 ? `Resend OTP in ${sec}s` : 'Resend OTP'; if (sec <= 0) { b.disabled = false; clearInterval(timer); } sec--; };
+  tick(); timer = setInterval(tick, 1000);
+}
+
+// Short two-note chime made with Web Audio (no files). Add ?silent to the URL to mute.
+function chime() {
+  if (!audio) return;
+  const t0 = audio.currentTime;
+  [[880, 0], [1318.5, 0.14]].forEach(([f, d]) => {
+    const o = audio.createOscillator(), g = audio.createGain();
+    o.type = 'sine'; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, t0 + d);
+    g.gain.exponentialRampToValueAtTime(0.18, t0 + d + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + d + 0.55);
+    o.connect(g).connect(audio.destination); o.start(t0 + d); o.stop(t0 + d + 0.6);
+  });
+}
+
+function maskedTarget(v) {
+  if (EMAIL_RE.test(v)) {
+    const [u, d] = v.split('@');
+    return `OTP sent successfully to ${u.slice(0, 2)}${'*'.repeat(Math.max(u.length - 2, 3))}@${d}`;
+  }
+  return 'OTP sent successfully to your registered mobile number ending 4821';
+}
+
+// Nothing is sent anywhere. Any non-empty email / account number "sends" an OTP.
+$('step1').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const v = $('ident').value.trim();
+  if (!v) {
+    const f = $('ident'); f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake');
+    $('msg1').className = 'msg err'; $('msg1').textContent = 'Enter your email or account number.';
+    return;
+  }
+  $('msg1').textContent = '';
+  const btn = $('sendBtn'); btn.disabled = true; btn.textContent = 'Sending OTP…';
+  await sleep(1200);
+  btn.disabled = false; btn.textContent = 'Send OTP';
+  $('sentNote').textContent = maskedTarget(v);
+  show('step2'); boxes.forEach(b => b.value = ''); boxes[0].focus(); startCooldown(30);
+});
+
+$('resendBtn').addEventListener('click', () => {
+  $('msg2').className = 'msg ok'; $('msg2').textContent = 'A new OTP has been sent.';
+  boxes.forEach(b => b.value = ''); boxes[0].focus(); startCooldown(30);
+});
+$('changeBtn').addEventListener('click', () => { clearInterval(timer); show('step1'); $('ident').focus(); });
+
+boxes.forEach((box, i) => {
+  box.addEventListener('input', () => { box.value = box.value.replace(/\D/g, '').slice(-1); if (box.value && i < 5) boxes[i + 1].focus(); });
+  box.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace' && !box.value && i > 0) boxes[i - 1].focus();
+    if (e.key === 'ArrowLeft' && i > 0) boxes[i - 1].focus();
+    if (e.key === 'ArrowRight' && i < 5) boxes[i + 1].focus();
+  });
+  box.addEventListener('paste', (e) => {
+    const t = (e.clipboardData.getData('text') || '').replace(/\D/g, '').slice(0, 6);
+    if (!t) return; e.preventDefault();
+    t.split('').forEach((d, k) => boxes[k].value = d); boxes[Math.min(t.length, 5)].focus();
+  });
+});
+
+// Whatever OTP is typed (right, wrong, partial or empty) counts as correct.
+$('step2').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  clearInterval(timer);
+  try { audio = silent ? null : new (window.AudioContext || window.webkitAudioContext)(); } catch (_) { audio = null; }
+
+  show('processing'); $('procTitle').textContent = 'Verifying OTP';
+  await sleep(1200); $('procTitle').textContent = 'Securing your session';
+  await sleep(1000);
+
+  show('success'); chime();
+  await sleep(4000);                      // tick animation + progress bar
+
+  $('skeleton').classList.remove('hidden');   // loading skeleton, stays on screen
+  document.body.style.overflow = 'hidden';
+});
+</script>
+</body>
+</html>

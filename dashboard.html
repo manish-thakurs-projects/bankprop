@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview | Kestrel Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="dashboard.html">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#b8893b"/><path d="M8 24c5-1 8-4 10-9l3 5 4-7 7 11c-4-2-8-2-12 0-4-2-8-2-12 0Z" fill="#0f3d3a"/></svg>
+      Kestrel Bank
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="active" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Overview</a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>Accounts</a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h13l-3-3M17 17H4l3 3"/></svg>Transfers</a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>Cards</a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg>Bill payments</a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>Statements</a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5h0a1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Settings</a>
+    </nav>
+    <div class="spacer"></div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <input class="search" type="search" placeholder="Search transactions, payees, statements" aria-label="Search">
+      <div class="user">
+        <div class="who"><b>Aarav Mehta</b><span>A/c XXXX4821</span></div>
+        <div class="avatar" aria-hidden="true">AM</div>
+        <a class="logout" href="index.html">Sign out</a>
+      </div>
+    </header>
+
+    <main class="content">
+      <h1>Good morning, Aarav</h1>
+      <p class="lead">Last sign-in: 18 Nov 2026, 09:42 AM from Bengaluru</p>
+
+      <section class="grid hero">
+        <div class="card balance">
+          <small>Total balance across accounts</small>
+          <div class="amt">₹ 7,36,482.55</div>
+          <div class="meta">
+            <div>Available this month<b>₹ 6,91,230.00</b></div>
+            <div>Credit limit used<b>₹ 38,500 of ₹ 2,00,000</b></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Quick actions</h3>
+          <div class="actions">
+            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Send money</a>
+            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/></svg>Pay a bill</a>
+            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h6"/></svg>Add payee</a>
+            <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/></svg>Download statement</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid cols">
+        <div class="card acct"><div><div class="type">Savings account</div><div class="no">XXXX XXXX 4821</div><span class="tag">Primary</span></div><div class="bal">₹ 4,82,350.75<span>Available</span></div></div>
+        <div class="card acct"><div><div class="type">Current account</div><div class="no">XXXX XXXX 9137</div></div><div class="bal">₹ 1,24,131.80<span>Available</span></div></div>
+        <div class="card acct"><div><div class="type">Fixed deposit</div><div class="no">FD 2207 · matures 14 Mar 2028</div></div><div class="bal">₹ 1,30,000.00<span>at 7.1% p.a.</span></div></div>
+      </section>
+
+      <section class="grid lower">
+        <div class="card">
+          <h3>Recent transactions</h3>
+          <table>
+            <thead><tr><th>Date</th><th>Description</th><th>Category</th><th class="amt">Amount</th></tr></thead>
+            <tbody>
+              <tr><td>18 Nov</td><td>Salary credit, Brightwave Technologies</td><td><span class="tag">Income</span></td><td class="amt cr">+ ₹ 1,45,000.00</td></tr>
+              <tr><td>17 Nov</td><td>UPI to Fresh Basket Grocers</td><td><span class="tag">Groceries</span></td><td class="amt dr">− ₹ 2,846.00</td></tr>
+              <tr><td>16 Nov</td><td>Metro Smart Card recharge</td><td><span class="tag">Travel</span></td><td class="amt dr">− ₹ 500.00</td></tr>
+              <tr><td>15 Nov</td><td>Spice Route Restaurant</td><td><span class="tag">Dining</span></td><td class="amt dr">− ₹ 1,620.00</td></tr>
+              <tr><td>14 Nov</td><td>NEFT from Rohan Mehta</td><td><span class="tag">Transfer</span></td><td class="amt cr">+ ₹ 12,000.00</td></tr>
+              <tr><td>12 Nov</td><td>Electricity bill, BESCOM</td><td><span class="tag">Utilities</span></td><td class="amt dr">− ₹ 2,310.00</td></tr>
+              <tr><td>10 Nov</td><td>Online order, Pagemint Books</td><td><span class="tag">Shopping</span></td><td class="amt dr">− ₹ 1,198.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <h3>Spending, last 6 months</h3>
+            <div class="bars" role="img" aria-label="Monthly spending, rising from 38 thousand in June to 52 thousand in November">
+              <div><i style="height:62%"></i>Jun</div>
+              <div><i style="height:48%"></i>Jul</div>
+              <div><i style="height:70%"></i>Aug</div>
+              <div><i style="height:55%"></i>Sep</div>
+              <div><i style="height:64%"></i>Oct</div>
+              <div><i style="height:41%"></i>Nov</div>
+            </div>
+          </div>
+          <div class="bank-card" aria-label="Debit card">
+            <div style="display:flex;justify-content:space-between;font-weight:800">Kestrel Bank <span style="font-weight:600;color:#a9c6c0">Debit</span></div>
+            <div class="num">5412 ···· ···· 4821</div>
+            <div class="row2"><div>Card holder<b>AARAV MEHTA</b></div><div>Expires<b>09/29</b></div></div>
+          </div>
+          <div class="card">
+            <h3>Upcoming bills</h3>
+            <div class="bill"><div>Home loan EMI<span>Due 05 Dec</span></div><b>₹ 28,400.00</b></div>
+            <div class="bill"><div>Broadband, FiberNest<span>Due 07 Dec</span></div><b>₹ 1,049.00</b></div>
+            <div class="bill"><div>Credit card payment<span>Due 12 Dec</span></div><b>₹ 38,500.00</b></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>
